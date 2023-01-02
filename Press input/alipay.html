@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>支付宝</title>
+	<style>
+		.hide{
+			display: none;
+		}
+		button{
+	            background-color:#c7000b;
+	            color:#ffffff;
+	            
+	            height: 47px;
+	            border:0;
+	            font-size: 16px;			
+                border-radius: 30px;
+        }
+	</style>
+</head>
+<body>
+	<div>
+		<h1 id="title-2">
+			<div class="text" style=" text-align:center;">距离2022年春节过年还有</div>
+		</h1>
+		<div>
+			<div class="text" style=" text-align:center;">
+				<h3 id="t_t">XX 天 XX 时 XX 分 XX 秒</h3>
+			</div>
+<script type="text/javascript">
+	function getRTime(){
+		var EndTime= new Date('2023/01/22 00:00:00'); //截止时间
+		var NowTime = new Date();
+		var t =EndTime.getTime() - NowTime.getTime();
+		var d=Math.floor(t/1000/60/60/24);
+		var h=Math.floor(t/1000/60/60%24);
+		var m=Math.floor(t/1000/60%60);
+		var s=Math.floor(t/1000%60);
+		document.getElementById("t_t").innerHTML = d + " 天 " + h + " 时 " + m + " 分 " + s + " 秒";
+}
+setInterval(getRTime,1000);
+</script>
+<div align="center">
+		<center><button value="隐藏收款码" onclick="fn()" style="display:block; width: 150px;" id="world">隐藏收款码 </button></center>
+	<center><a href="./index.html"><button style="width: 80px; margin-top: 8px;">返回</button></a></center>
+		<img src="./imag/alipay.jpg" style="margin-top: 20px;" id="img" width="200" alt="">
+		<script>
+			function fn(){
+				var img=document.getElementById("img");
+				if(document.getElementById("world").innerHTML=="隐藏收款码"){
+					img.className="hide";
+					document.getElementById("world").innerHTML="显示收款码";
+				}else{
+					img.className="";
+					document.getElementById("world").innerHTML="隐藏收款码";
+				}
+			}
+		</script>
+	</div>
+</body>
+</html>
